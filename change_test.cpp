@@ -1,4 +1,4 @@
-// change_test.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// change_test.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -23,8 +23,8 @@ int _tmain(int argc, _TCHAR* argv[])
 int ChangeNum(string BigNum)
 {
 	int Num = 0;
-	CString unit = _T("Ê®°ÙÇ§Íò"), number = _T("ÁãÒ»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®");
-	int tem;//´æ·Åµ¥Î»
+	CString unit = _T("åç™¾åƒä¸‡"), number = _T("é›¶ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹å");
+	int tem;//å­˜æ”¾å•ä½
 	CString BigNum_Cstring = BigNum.c_str();
 	for (int i = 0; i <= BigNum_Cstring.GetLength(); i++)
 	{
@@ -47,6 +47,11 @@ int ChangeNum(string BigNum)
 			if (number[k] == BigNum_Cstring[i])
 			{
 				if (k == 0){ break; }
+				else if (k==10)
+				{
+					Num += 10;
+					break;
+				}
 				else
 				{
 					for (int l = 0; l < 5; l++)
@@ -72,10 +77,10 @@ int ChangeNum(string BigNum)
 								i++;
 								break;
 							}
-							break;//ÍË³öÑ°ÕÒµ¥Î»Ñ­»·
+							break;//é€€å‡ºå¯»æ‰¾å•ä½å¾ªç¯
 						}
 					}
-					break;//ÍË³öµ±Ç°×Ö·û×ª»»£¬¿ªÊ¼ÏÂÒ»¸ö
+					break;//é€€å‡ºå½“å‰å­—ç¬¦è½¬æ¢ï¼Œå¼€å§‹ä¸‹ä¸€ä¸ª
 				}
 			}
 		}
